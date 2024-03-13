@@ -1,6 +1,7 @@
 resource "aws_security_group" "sg001" {
   name        = var.sg_name
   description = "Allow inbound traffic on port 22 and 80"
+  vpc_id = data.aws_vpcs.AE001-vpc.ids[0]
 
   ingress {
     from_port = 22
